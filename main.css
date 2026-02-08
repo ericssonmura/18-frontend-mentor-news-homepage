@@ -275,6 +275,10 @@ COMPOSANT : PRIMARY NAVIGATION DRAWER
   -webkit-overflow-scrolling: touch;
 
   visibility: hidden;
+
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .primary-navigation[data-visible="true"] {
