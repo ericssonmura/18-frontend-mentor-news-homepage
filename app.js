@@ -3,16 +3,16 @@ const primaryNav = document.querySelector('.primary-navigation');
 const overlay = document.querySelector('.overlay');
 
 function openMenu() {
-    primaryNav.setAttribute('data-visible', true);
-    navToggle.setAttribute('aria-expanded', true);
-    overlay.setAttribute('data-visible', true);
+    primaryNav.setAttribute('data-visible', "true");
+    navToggle.setAttribute('aria-expanded', "true");
+    overlay.setAttribute('data-visible', "true");
     document.body.classList.add('noscroll');
 }
 
 function closeMenu() {
-    primaryNav.setAttribute('data-visible', false);
-    navToggle.setAttribute('aria-expanded', false);
-    overlay.setAttribute('data-visible', false);
+    primaryNav.setAttribute('data-visible', "false");
+    navToggle.setAttribute('aria-expanded', "false");
+    overlay.setAttribute('data-visible', "false");
     document.body.classList.remove('noscroll');
 }
 
