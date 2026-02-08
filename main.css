@@ -214,12 +214,25 @@ button {
   block-size: 3px;
   background-color: var(--navy-950);
   left: 0;
+  /* 1. On définit l'origine du mouvement pour tout le monde */
+  transform-origin: center;
   transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
+/* --- LIGNE CENTRALE (Spécifique) --- */
 .nav-toggle__inner {
   top: 50%;
+  /* Elle reste centrée verticalement */
   transform: translateY(-50%);
+}
+
+/* --- LIGNES HAUT ET BAS (Spécifiques) --- */
+.nav-toggle__inner::before,
+.nav-toggle__inner::after {
+  content: '';
+  /* 2. CRUCIAL : On définit l'état de départ à 0 degré.
+     Cela permet au navigateur de calculer le chemin inverse proprement. */
+  transform: rotate(0); 
 }
 
 .nav-toggle__inner::before {
@@ -234,6 +247,8 @@ button {
 
 .nav-toggle[aria-expanded="true"] .nav-toggle__inner {
   background-color: transparent;
+  /* On garde le translate pour qu'elle ne bouge pas, mais on peut rotate si besoin */
+  transform: translateY(-50%);
 }
 
 .nav-toggle[aria-expanded="true"] .nav-toggle__inner::before {
