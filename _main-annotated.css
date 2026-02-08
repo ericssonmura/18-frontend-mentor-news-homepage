@@ -312,6 +312,15 @@ COMPOSANT : PRIMARY NAVIGATION DRAWER (Comportement Mobile)
   /* On le déplace à 100% vers la droite (hors écran) */
   transform: translateX(100%);
   transition: transform 350ms ease-out, visibility 350ms ease-out;
+
+  /* 👇 Si écran zoomé, permet de défiler verticalement dans le menu 👇 */
+  block-size: 100dvh; /* Force la hauteur à 100% de l'écran visible */
+  overflow-y: auto; /* Active le scroll vertical si le contenu dépasse */
+  overscroll-behavior: contain; /* Empêche de scroller le site derrière quand on arrive au bout du menu */
+  
+  /* Optionnel : pour un scroll fluide sur mobile */
+  -webkit-overflow-scrolling: touch;
+
   /* AJOUT A11Y : On le cache complètement au clavier quand il est fermé */
   visibility: hidden;
 }
@@ -457,7 +466,7 @@ COMPOSANT : PRIMARY NAVIGATION DRAWER (Comportement Mobile)
 .new-news__item:last-child {
   border-bottom: none;
   /* padding-block-end: 0; */
-  padding-bottom: 0;
+  padding-block-end: 0;
 }
 
 .new-news__headline a {
@@ -593,7 +602,10 @@ COMPOSANT : PRIMARY NAVIGATION DRAWER (Comportement Mobile)
 
   /* On reset le menu pour qu'il s'affiche en ligne */
   .primary-navigation {
-    position: static; 
+    position: static;
+    /* ANNULER LE 100dvh DU MOBILE */
+    block-size: auto; /* On laisse le contenu décider de la hauteur */
+    overflow-y: visible; /* Plus besoin de barre de défilement */
     transform: none; 
     transition: none;
     padding: 0; 
@@ -655,7 +667,7 @@ COMPOSANT : PRIMARY NAVIGATION DRAWER (Comportement Mobile)
   }
 
   .primary-header {
-    margin-bottom: 3.5rem;
+    margin-block-end: 3.5rem;
   }
 
   .primary-header__logo {
@@ -674,6 +686,9 @@ COMPOSANT : PRIMARY NAVIGATION DRAWER (Comportement Mobile)
   /* = tout le code qui remet le menu à l'horizontale ... */
   .primary-navigation {
     position: static; /* Revient dans le flux normal */
+    /* ANNULER LE 100dvh DU MOBILE */
+    block-size: auto; /* On laisse le contenu décider de la hauteur */
+    overflow-y: visible; /* Plus besoin de barre de défilement */
     transform: none; /* Pas d'animation de glissement */
     transition: none;
     inline-size: auto;
@@ -733,7 +748,7 @@ COMPOSANT : PRIMARY NAVIGATION DRAWER (Comportement Mobile)
     grid-column: span 1;
     /* min-width: 0; */ /* => plus besoin */
     margin-top: 0;
-    height: 100%; /* S'aligne sur la hauteur du Hero */
+    block-size: 100%; /* S'aligne sur la hauteur du Hero */
   }
 
   /* .featured-article {
@@ -768,7 +783,7 @@ COMPOSANT : PRIMARY NAVIGATION DRAWER (Comportement Mobile)
   .top-articles {
     grid-column: 1 / -1; /* De la 1ère à la dernière ligne */
     /* min-width: 0; */ /* => plus besoin */
-    margin-top: 2rem; /* Espace au-dessus des 3 petits articles */
+    margin-block-start: 2rem; /* Espace au-dessus des 3 petits articles */
   }
 
   .top-articles__list {
