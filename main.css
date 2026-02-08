@@ -558,7 +558,7 @@ COMPOSANT : PRIMARY NAVIGATION DRAWER
     inline-size: min(100% - 4rem, 69.5rem);
     margin-inline: auto;
     padding-inline: 0;
-    padding-block: 4rem;
+    padding-block: 3.5rem;
   }
 
   .primary-header {
