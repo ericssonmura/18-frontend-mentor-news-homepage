@@ -267,7 +267,8 @@ COMPOSANT : PRIMARY NAVIGATION DRAWER
   
   transform: translateX(100%);
   transition: transform 350ms ease-out, visibility 350ms ease-out;
-  height: 100dvh; 
+
+  block-size: 100dvh; 
   overflow-y: auto;
   overscroll-behavior: contain;
 
@@ -395,12 +396,12 @@ COMPOSANT : PRIMARY NAVIGATION DRAWER
 
 .new-news__item {
   padding-block: 2rem;
-  border-bottom: 1px solid var(--navy-600);
+  border-block-end: 1px solid var(--navy-600);
 }
 
 .new-news__item:last-child {
   border-bottom: none;
-  padding-bottom: 0;
+  padding-block-end: 0;
 }
 
 .new-news__headline a {
@@ -501,7 +502,7 @@ COMPOSANT : PRIMARY NAVIGATION DRAWER
 
   .primary-navigation {
     position: static;
-    height: auto; 
+    block-size: auto; 
     overflow-y: visible; 
     transform: none; 
     transition: none;
@@ -549,7 +550,7 @@ COMPOSANT : PRIMARY NAVIGATION DRAWER
   }
 
   .primary-header {
-    margin-bottom: 3.5rem;
+    margin-block-end: 3.5rem;
   }
 
   .primary-header__logo {
@@ -564,7 +565,7 @@ COMPOSANT : PRIMARY NAVIGATION DRAWER
 
   .primary-navigation {
     position: static; 
-    height: auto; 
+    block-size: auto; 
     overflow-y: visible;
     transform: none;
     transition: none;
@@ -608,8 +609,8 @@ COMPOSANT : PRIMARY NAVIGATION DRAWER
   .new-news {
     padding: 2rem 1.5rem;
     grid-column: span 1;
-    margin-top: 0;
-    height: 100%;
+    margin-block-start: 0;
+    block-size: 100%;
   }
 
   .featured-article__image {
@@ -630,7 +631,7 @@ COMPOSANT : PRIMARY NAVIGATION DRAWER
 
   .top-articles {
     grid-column: 1 / -1;
-    margin-top: 2rem;
+    margin-block-start: 2rem;
   }
 
   .top-articles__list {
