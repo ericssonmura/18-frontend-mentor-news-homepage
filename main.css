@@ -254,7 +254,6 @@ COMPOSANT : PRIMARY NAVIGATION DRAWER
   z-index: var(--z-menu);
   inset: 0 0 0 auto;
 
-  
   inline-size: 68.3%; 
   max-inline-size: 16rem;
   
