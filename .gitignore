@@ -39,5 +39,5 @@ npm-debug.log*
 .DS_Store
 Thumbs.db
 
-/app-annotated.js
-/main-annotated.css
+/_app-annotated.js
+/_main-annotated.css
