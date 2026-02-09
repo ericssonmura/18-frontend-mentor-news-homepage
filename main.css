@@ -5,27 +5,20 @@
    ========================================= */
 :root {
   --white-900: hsl(0, 0%, 100%);
-  /* --neutral-off-white */
   --black-900: hsl(0, 0%, 0%);
   --grey-200: hsl(0, 0%, 85%);
   --grey-300: hsl(233, 8%, 79%);
   --navy-600: hsl(236, 13%, 42%);
   --navy-950: hsl(240, 100%, 5%);
-  /* --neutral-very-dark-blue */
   --gold-400: hsl(35, 77%, 62%);
   --red-500: hsl(4, 85%, 63%);
-  /* --primary-soft-red */
 
   --spacing-100: 0.5rem;
   --spacing-200: 1rem;
   --spacing-300: 1.5rem;
-  /* 24px */
   --spacing-500: 2.5rem;
-  /* 40px */
   --spacing-800: 4rem;
-  /* 64px */
   --spacing-1100: 5.5rem;
-  /* 88px */
 
   /* Z-Index Layering */
   --z-overlay: 500;
@@ -176,8 +169,7 @@ button {
 }
 
 .primary-header__logo {
-  inline-size: 2.8125rem;
-  /* 45px */
+  inline-size: 2.8125rem; /* 45px */
   block-size: 1.75rem;
   flex-shrink: 0;
   display: block;
@@ -224,7 +216,6 @@ button {
   vertical-align: middle;
 }
 
-/* --- LIGNES COMMUNES --- */
 .nav-toggle__inner,
 .nav-toggle__inner::before,
 .nav-toggle__inner::after {
@@ -234,10 +225,8 @@ button {
   background-color: var(--navy-950);
   left: 0;
 
-  /* On garde l'origine au centre pour une belle rotation */
   transform-origin: center;
 
-  /* SIMPLIFICATION : Tout le monde bouge en même temps (0.3s) */
   transition:
     transform 0.3s ease-in-out,
     top 0.3s ease-in-out,
@@ -245,13 +234,11 @@ button {
     background-color 0.3s ease-in-out;
 }
 
-/* --- LIGNE DU MILIEU --- */
 .nav-toggle__inner {
   top: 50%;
   transform: translateY(-50%);
 }
 
-/* --- PSEUDO-ÉLÉMENTS (État FERMÉ) --- */
 .nav-toggle__inner::before,
 .nav-toggle__inner::after {
   content: '';
@@ -266,23 +253,16 @@ button {
   bottom: -7px;
 }
 
-/* =========================================
-   ÉTAT OUVERT (La Croix)
-   ========================================= */
-
-/* 1. Le milieu disparaît */
 .nav-toggle[aria-expanded="true"] .nav-toggle__inner {
   background-color: transparent;
   transform: translateY(-50%);
 }
 
-/* 2. La ligne du HAUT descend et tourne (En même temps) */
 .nav-toggle[aria-expanded="true"] .nav-toggle__inner::before {
   top: 0;
   transform: rotate(45deg);
 }
 
-/* 3. La ligne du BAS monte et tourne (En même temps) */
 .nav-toggle[aria-expanded="true"] .nav-toggle__inner::after {
   bottom: 0;
   transform: rotate(-45deg);
